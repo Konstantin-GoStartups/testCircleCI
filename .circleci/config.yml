@@ -10,35 +10,26 @@ jobs:
       - checkout
       - run: bundle install
       - run:
-          name: Fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
-      - store_artifacts:
-          path: output
+        name: Fetch CocoaPods specs
+        command: | curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+     - run:
+        name: Install cocoapods
+        command: pod install --verbose
+      - run:
+          name: Build and test
+          command: fastlane scan
+          environment:
+            SCAN_DEVICE: iPhone XR
+            SCAN_SCHEME: Geocaching_pmu
       - store_test_results:
           path: output/scan
-
-  adhoc:
-    macos:
-      xcode: 11.4.0
-    environment:
-      FL_OUTPUT_DIR: output
-      FASTLANE_LANE: adhoc
-    steps:
-      - checkout
-      - run: bundle install
-      - run:
-          name: Fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
       - store_artifacts:
           path: output
 
+
+
 workflows:
-  build-test-adhoc:
-    jobs:
-      - build-and-test
-      - adhoc:
-          filters:
-            branches:
-              only: development
-          requires:
-            - build-and-test
+  version: 2.1
+    build-and-test:
+        jobs:
+            -build-and-test
