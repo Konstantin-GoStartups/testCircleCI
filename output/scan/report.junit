@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='Geocaching_pmuTests.xctest' tests='1' failures='0'>
+  <testsuite name='Geocaching_pmuTests.Geocaching_pmuTests' tests='1' failures='0'>
+    <testcase classname='Geocaching_pmuTests.Geocaching_pmuTests' name='testPerformanceExample' time='0.343'/>
+  </testsuite>
+</testsuites>

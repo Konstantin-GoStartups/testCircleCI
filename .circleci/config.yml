@@ -1,35 +1,74 @@
 version: 2.1
+
+executors:
+    macos_executor:
+        macos:
+            xcode: "11.4.0"
+        working_directory: "~/project"
+
+
+commands:
+    lint:
+        description: "Execute SwiftLint"
+        steps:
+            - run:
+                command: fastlane lint
+                
+    save_workspace:
+      description: "Saving workspace for reuse"
+      steps:
+        - persist_to_workspace:
+            root: ~/
+            paths: project
+            
+    restore_workspace:
+      description: "Restoring the workspace"
+      steps:
+        - attach_workspace:
+            at: ~/
+            
 jobs:
-  build-and-test:
-    macos:
-      xcode: 11.4.0
-    environment:
-      FL_OUTPUT_DIR: output
-      FASTLANE_LANE: test
-    steps:
-      - checkout
-      - run: bundle install
-      - run:
-        name: Fetch CocoaPods specs
-        command: curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-     - run:
-        name: Install cocoapods
-        command: pod install --verbose
-      - run:
-          name: Build and test
-          command: fastlane scan
-          environment:
-            SCAN_DEVICE: iPhone XR
-            SCAN_SCHEME: Geocaching_pmu
-      - store_test_results:
-          path: output/scan
-      - store_artifacts:
-          path: output
+    setup:
+        executor: macos_executor
+        steps:
+            - restore_workspace
+            - chechout
+            - save_workspace
+        
+        build-and-test:
+        executor: macos_executor
+        steps:
+          - restore_workspace
+          - prepare_bundle
+          - run:
+              name: Build and run tests
+              command: fastlane tests
+          
+          - store_artifacts:
+              path: ~/project/output
 
-
-
+          - store_test_results:
+              path: ~/project/output/scan/report.html
+              
+        lint:
+        executor: macos_executor
+        steps:
+          - restore_workspace
+          - prepare_bundle
+          - lint
+          - store_artifacts:
+                path: ~/project/output
+            
+            
 workflows:
-  version: 2.1
-    build-and-test:
-        jobs:
-            -build-and-test
+version: 2
+
+build-and-test:
+  jobs:
+    - setup
+    - build-and-test:
+        requires:
+          - setup
+    - lint:
+          requires:
+          - setup

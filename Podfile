@@ -9,5 +9,6 @@ target 'Geocaching_pmu' do
   pod 'Alamofire', '~> 4.9.1'
   pod 'SVProgressHUD'
   pod 'iOSDropDown'
+  pod 'SwiftLint'
 
 end
