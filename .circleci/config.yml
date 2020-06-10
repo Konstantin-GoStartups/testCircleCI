@@ -72,10 +72,3 @@ workflows:
             - lint:
                 requires:
                     - setup
-            
-    lint:
-        jobs:
-            - setup
-            - lint:
-                requires:
-                    -setup
