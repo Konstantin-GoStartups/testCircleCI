@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="nMI-2A-zrC">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TaT-0g-YWO" customClass="LoginViewController" customModule="Geocaching_pmu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OJu-Gj-ffx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1t-ec-Hsl">
+                                <rect key="frame" x="16" y="393" width="343" height="30"/>
+                                <state key="normal" title="Логин"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="TaT-0g-YWO" eventType="touchUpInside" id="C7h-uf-VHw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Потребителско име" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Okt-ho-CSM">
+                                <rect key="frame" x="16" y="214" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Парола" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gi6-0b-0JB">
+                                <rect key="frame" x="16" y="316" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naQ-dB-9dh">
+                                <rect key="frame" x="16" y="544" width="343" height="30"/>
+                                <state key="normal" title="Към регистрация"/>
+                                <connections>
+                                    <segue destination="gAm-FM-c1Z" kind="presentation" modalPresentationStyle="fullScreen" id="zfJ-ZH-GYv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gi6-0b-0JB" firstAttribute="top" secondItem="Okt-ho-CSM" secondAttribute="bottom" constant="68" id="3Y4-oW-RX4"/>
+                            <constraint firstItem="x1t-ec-Hsl" firstAttribute="top" secondItem="Gi6-0b-0JB" secondAttribute="bottom" constant="43" id="K08-Ft-Jrd"/>
+                            <constraint firstItem="1Cv-Md-EYn" firstAttribute="bottom" secondItem="naQ-dB-9dh" secondAttribute="bottom" constant="93" id="OBK-UT-PxZ"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="leading" secondItem="x1t-ec-Hsl" secondAttribute="leading" id="TTp-du-MjO"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="trailing" secondItem="OJu-Gj-ffx" secondAttribute="trailingMargin" id="acL-vb-FGV"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="trailing" secondItem="x1t-ec-Hsl" secondAttribute="trailing" id="cVV-OM-0BB"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="top" secondItem="1Cv-Md-EYn" secondAttribute="top" constant="170" id="er5-Sn-8T3"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="leading" secondItem="Gi6-0b-0JB" secondAttribute="leading" id="iG9-F4-jca"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="leading" secondItem="OJu-Gj-ffx" secondAttribute="leadingMargin" id="qyI-jF-JfY"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="trailing" secondItem="Gi6-0b-0JB" secondAttribute="trailing" id="s29-Gj-liR"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="trailing" secondItem="naQ-dB-9dh" secondAttribute="trailing" id="tWW-GI-VWB"/>
+                            <constraint firstItem="Okt-ho-CSM" firstAttribute="leading" secondItem="naQ-dB-9dh" secondAttribute="leading" id="vCQ-t8-ZNL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Cv-Md-EYn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6zX-WB-Hnm"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Okt-ho-CSM" id="8aK-a9-hlt"/>
+                        <outlet property="loginButton" destination="x1t-ec-Hsl" id="29q-Zh-bgn"/>
+                        <outlet property="passwordTextFIeld" destination="Gi6-0b-0JB" id="uF8-Ed-4G6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YWz-ug-bzq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754.39999999999998" y="41.829085457271368"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="Y8G-f7-QzO">
+            <objects>
+                <viewController id="gAm-FM-c1Z" customClass="RegistrationViewController" customModule="Geocaching_pmu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MHB-KD-ZkU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Потребителско име" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLf-7G-YKC">
+                                <rect key="frame" x="16" y="43" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="име" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hI-H5-GRJ">
+                                <rect key="frame" x="16" y="119" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUc-ge-2xs">
+                                <rect key="frame" x="16" y="197" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Парола" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CS-e5-x0G">
+                                <rect key="frame" x="16" y="272" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Потвърди парола" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u4f-u9-8bY">
+                                <rect key="frame" x="16" y="349" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rX0-zh-Tki">
+                                <rect key="frame" x="16" y="471" width="343" height="30"/>
+                                <state key="normal" title="Регистрирай ме!"/>
+                                <connections>
+                                    <action selector="registrationButtonTapped:" destination="gAm-FM-c1Z" eventType="touchUpInside" id="oak-FI-Zsk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rX0-zh-Tki" firstAttribute="top" secondItem="u4f-u9-8bY" secondAttribute="bottom" constant="88" id="1vc-ES-OP6"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="trailing" secondItem="0hI-H5-GRJ" secondAttribute="trailing" id="2Pn-I7-dVq"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="trailing" secondItem="u4f-u9-8bY" secondAttribute="trailing" id="33x-pZ-09E"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="top" secondItem="k8C-EQ-gyx" secondAttribute="top" constant="43" id="66o-BA-cTf"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="leading" secondItem="FUc-ge-2xs" secondAttribute="leading" id="8eG-my-6Bc"/>
+                            <constraint firstItem="u4f-u9-8bY" firstAttribute="top" secondItem="3CS-e5-x0G" secondAttribute="bottom" constant="43" id="AS1-Ii-fUW"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="leading" secondItem="rX0-zh-Tki" secondAttribute="leading" id="FmJ-Fc-Rrv"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="trailing" secondItem="MHB-KD-ZkU" secondAttribute="trailingMargin" id="Fu5-oR-gDo"/>
+                            <constraint firstItem="0hI-H5-GRJ" firstAttribute="top" secondItem="gLf-7G-YKC" secondAttribute="bottom" constant="42" id="GXy-SZ-Gji"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="leading" secondItem="u4f-u9-8bY" secondAttribute="leading" id="IcU-6w-WWJ"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="leading" secondItem="0hI-H5-GRJ" secondAttribute="leading" id="Qy3-zB-dyx"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="trailing" secondItem="rX0-zh-Tki" secondAttribute="trailing" id="TBO-pn-AU2"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="trailing" secondItem="FUc-ge-2xs" secondAttribute="trailing" id="e1n-uW-MLs"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="trailing" secondItem="3CS-e5-x0G" secondAttribute="trailing" id="e1v-Gz-MhV"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="leading" secondItem="MHB-KD-ZkU" secondAttribute="leadingMargin" id="fcN-gE-RXw"/>
+                            <constraint firstItem="3CS-e5-x0G" firstAttribute="top" secondItem="FUc-ge-2xs" secondAttribute="bottom" constant="41" id="h8H-ES-OHy"/>
+                            <constraint firstItem="FUc-ge-2xs" firstAttribute="top" secondItem="0hI-H5-GRJ" secondAttribute="bottom" constant="44" id="lWU-XX-ofC"/>
+                            <constraint firstItem="gLf-7G-YKC" firstAttribute="leading" secondItem="3CS-e5-x0G" secondAttribute="leading" id="zoL-H7-ywd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k8C-EQ-gyx"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="u4f-u9-8bY" id="EAi-3B-aYi"/>
+                        <outlet property="firstNameTextField" destination="0hI-H5-GRJ" id="Vrv-ae-O7y"/>
+                        <outlet property="lastNameTextFIeld" destination="FUc-ge-2xs" id="KIY-sP-egx"/>
+                        <outlet property="passwordTextField" destination="3CS-e5-x0G" id="2eg-Zd-cSl"/>
+                        <outlet property="registrationButton" destination="rX0-zh-Tki" id="zqz-mz-nRT"/>
+                        <outlet property="usernameTextField" destination="gLf-7G-YKC" id="MMy-c2-kgd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I04-TV-Loi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597.5999999999999" y="39.130434782608695"/>
+        </scene>
+        <!--NavController-->
+        <scene sceneID="uhO-yL-dCY">
+            <objects>
+                <navigationController storyboardIdentifier="NavController" title="NavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ibd-Zb-YGk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qqh-il-eWE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TaT-0g-YWO" kind="relationship" relationship="rootViewController" id="6dP-hz-UNx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="beA-6L-jtf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-184.80000000000001" y="41.829085457271368"/>
+        </scene>
+    </scenes>
+</document>
