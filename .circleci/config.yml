@@ -61,14 +61,20 @@ jobs:
             
             
 workflows:
-    version: 2
+    version: 2.1
 
     build-and-test:
     jobs:
         - setup
         - build-and-test:
             requires:
-            - setup
+                - setup
         - lint:
             requires:
-            - setup
+                - setup
+            
+    jobs:
+        - setup
+        - lint:
+            requires:
+                -setup
