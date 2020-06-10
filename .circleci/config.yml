@@ -32,7 +32,7 @@ jobs:
         executor: macos_executor
         steps:
             - restore_workspace
-            - chechout
+            - checkout
             - save_workspace
         
     build-and-test:
