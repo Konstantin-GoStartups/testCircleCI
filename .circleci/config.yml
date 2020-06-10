@@ -11,7 +11,7 @@ jobs:
       - run: bundle install
       - run:
         name: Fetch CocoaPods specs
-        command: | curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+        command: curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
      - run:
         name: Install cocoapods
         command: pod install --verbose
