@@ -14,7 +14,6 @@
 //  All rights reserved 2008-2020 Activbody, Inc.
 
 import UIKit
-import SVProgressHUD
 
 class ShowContainerViewController: UIViewController {
     @IBOutlet weak var lattitudeLabel: UILabel!
@@ -49,18 +48,18 @@ class ShowContainerViewController: UIViewController {
     }
     
     @IBAction func actionButtonTapped(_ sender: Any) {
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
         if UserDefaultsData.latitude != (container?.coordinates.first as! NSString).doubleValue || UserDefaultsData.longitude != (container?.coordinates.last as! NSString).doubleValue {
-            SVProgressHUD.showError(withStatus: "НЕ сте на мястото")
+//            SVProgressHUD.showError(withStatus: "НЕ сте на мястото")
         }
         let dict = ["userID" : UserDefaultsData.userUUID,
                     "containerID" : container?.containerId]
         RequestManager.addContainerToUser(dict: dict) { (user, error) in
             if let error = error {
-                SVProgressHUD.showError(withStatus: error.localizedDescription)
+//                SVProgressHUD.showError(withStatus: error.localizedDescription)
             } else {
                 UserDefaultsData.userProfile = try? user.encode()
-                SVProgressHUD.dismiss()
+//                SVProgressHUD.dismiss()
             }
         }
     }

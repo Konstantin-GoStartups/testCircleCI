@@ -5,7 +5,6 @@
 //  Created by Konstantin Kostadinov on 1.06.20
 import AVFoundation
 import UIKit
-import SVProgressHUD
 
 class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
@@ -90,7 +89,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
 
     func found(code: String) {
-        SVProgressHUD.show()
         
     }
 

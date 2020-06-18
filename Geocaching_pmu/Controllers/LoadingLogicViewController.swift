@@ -5,7 +5,7 @@
 //  Created by Konstantin Kostadinov on 23.05.20
 
 import UIKit
-import SVProgressHUD
+
 class LoadingLogicViewController: UIViewController {
     
     private enum Constants {

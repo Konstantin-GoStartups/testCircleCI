@@ -7,7 +7,6 @@
 import UIKit
 import MapKit
 import CoreLocation
-import SVProgressHUD
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
@@ -38,7 +37,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             setupLocationManager()
             checkLocationVerification()
         } else {
-            SVProgressHUD.showError(withStatus: "Трябва да си пуснете локацията")
+//            SVProgressHUD.showError(withStatus: "Трябва да си пуснете локацията")
         }
     }
     
@@ -73,7 +72,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func takeContainers() {
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
         guard let userProfile = UserDefaultsData.userProfile else { return }
         if let tempUser = try? UserModel.decode(from: userProfile) {
             if !tempUser.areasUnlocked!.isEmpty{
@@ -82,12 +81,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 RequestManager.takeContainersForAreas(areas: areasFields) { (containers, error) in
                     if let error = error {
                         print(error)
-                        SVProgressHUD.showError(withStatus: error.localizedDescription)
+//                        SVProgressHUD.showError(withStatus: error.localizedDescription)
                     } else {
                         print("containers", containers)
                         self.createAnnotations(containers: containers)
                         self.containers = containers
-                        SVProgressHUD.dismiss()
+//                        SVProgressHUD.dismiss()
                     }
                 }
             }

@@ -14,7 +14,6 @@
 //  All rights reserved 2008-2020 Activbody, Inc.
 
 import UIKit
-import SVProgressHUD
 import CoreLocation
 import iOSDropDown
 
@@ -49,7 +48,7 @@ class NewContainerViewController: UIViewController {
     }
     private func checkLocationServices() {
         if !CLLocationManager.locationServicesEnabled() {
-            SVProgressHUD.showError(withStatus: "Трябва да си пуснете локацията")
+//            SVProgressHUD.showError(withStatus: "Трябва да си пуснете локацията")
             sendButton.isEnabled = false
         }
     }
@@ -77,9 +76,9 @@ class NewContainerViewController: UIViewController {
     }
     
     @IBAction func sendButtonTapped(_ sender: Any) {
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
         guard areaTextField.text != "" || packageSizeTextField.text != "" || terrainTextField.text != "" || difficultyTextField.text != "", containerDescriptionTextView.text != "" else {
-            SVProgressHUD.showError(withStatus: "Попълнете всички полета")
+//            SVProgressHUD.showError(withStatus: "Попълнете всички полета")
             return
         }
         let fields: [String:Any] = ["creator" : UserDefaultsData.userUUID ?? 0,
@@ -92,7 +91,7 @@ class NewContainerViewController: UIViewController {
         
         RequestManager.sendContainer(container: fields) { (user,error) -> Void in
             print(error)
-            SVProgressHUD.dismiss()
+//            SVProgressHUD.dismiss()
         }
     }
     

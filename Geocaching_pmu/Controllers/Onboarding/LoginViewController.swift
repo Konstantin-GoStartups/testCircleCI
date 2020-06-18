@@ -6,7 +6,6 @@
 
 import UIKit
 import Alamofire
-import SVProgressHUD
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,11 +20,11 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func loginButtonTapped(_ sender: Any) {
-        SVProgressHUD.show()
+//        SVProgressHUD.show()
         let username = emailTextField.text ?? ""
         let password = passwordTextFIeld.text ?? ""
         if (emailTextField.text?.isEmpty == true) || ((passwordTextFIeld.text?.isEmpty) == true) {
-            SVProgressHUD.showError(withStatus: "Има празни полета")
+//            SVProgressHUD.showError(withStatus: "Има празни полета")
         }
         RequestManager.login(username: username, password: password) { (user, error) in
             if let error = error {
@@ -38,7 +37,7 @@ class LoginViewController: UIViewController {
                 showItemVC.modalTransitionStyle = .crossDissolve
                 UserDefaultsData.isLoggedIn = true
                 UserDefaultsData.userProfile = try? user.encode()
-                SVProgressHUD.dismiss()
+//                SVProgressHUD.dismiss()
                 self.present(showItemVC, animated: true, completion: nil)
             }
         }
