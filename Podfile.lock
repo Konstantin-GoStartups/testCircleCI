@@ -1,28 +1,24 @@
 PODS:
   - Alamofire (4.9.1)
   - iOSDropDown (0.3.4)
-  - SVProgressHUD (2.2.5)
   - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - iOSDropDown
-  - SVProgressHUD
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - iOSDropDown
-    - SVProgressHUD
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 409e4b8fb901f812460656df779671388c556e9e
+PODFILE CHECKSUM: 16b290785e78060cd33c20925c07d7ebb25cf61b
 
 COCOAPODS: 1.9.0.beta.2

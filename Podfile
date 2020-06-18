@@ -7,7 +7,6 @@ target 'Geocaching_pmu' do
 
   # Pods for Geocaching_pmu
   pod 'Alamofire', '~> 4.9.1'
-  pod 'SVProgressHUD'
   pod 'iOSDropDown'
   pod 'SwiftLint'
 
