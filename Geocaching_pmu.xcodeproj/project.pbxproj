@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C257F1919C253EEA4A66D651 /* Pods_Geocaching_pmu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A774A126391948B7B1E80185 /* Pods_Geocaching_pmu.framework */; };
 		E501718724798C770017E209 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E501718624798C770017E209 /* Onboarding.storyboard */; };
 		E501718A24798EFF0017E209 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501718924798EFF0017E209 /* LoginViewController.swift */; };
 		E501718C24798F100017E209 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501718B24798F100017E209 /* RegistrationViewController.swift */; };
@@ -19,8 +18,6 @@
 		E501719E247A6B9E0017E209 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501719D247A6B9E0017E209 /* RequestManager.swift */; };
 		E50171A0247A6CAE0017E209 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501719F247A6CAE0017E209 /* UserModel.swift */; };
 		E53F4AAB24890F5000A3C8A9 /* ShowContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53F4AAA24890F5000A3C8A9 /* ShowContainerViewController.swift */; };
-		E53F4AAD24892F9A00A3C8A9 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53F4AAC24892F9A00A3C8A9 /* iOSDropDown.framework */; };
-		E53F4AAF2489337F00A3C8A9 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53F4AAE2489337F00A3C8A9 /* SVProgressHUD.framework */; };
 		E58A0D17248FC5290045B286 /* Geocaching_pmuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58A0D16248FC5290045B286 /* Geocaching_pmuTests.swift */; };
 		E5B26A762485259E00F09303 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B26A752485259E00F09303 /* ScannerViewController.swift */; };
 		E5B26A7924865FAB00F09303 /* NewContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B26A7824865FAB00F09303 /* NewContainerViewController.swift */; };
@@ -90,9 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E53F4AAF2489337F00A3C8A9 /* SVProgressHUD.framework in Frameworks */,
-				E53F4AAD24892F9A00A3C8A9 /* iOSDropDown.framework in Frameworks */,
-				C257F1919C253EEA4A66D651 /* Pods_Geocaching_pmu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
